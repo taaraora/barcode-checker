@@ -22,6 +22,11 @@ public class ShipmentController {
     @Autowired
     private ShipmentService shipmentService;
 
+    /**
+     * Can be used to check that specific barcode is already used in system.
+     * @param barcode String with length between 13 and 25 characters
+     * @return JSON representation of entity or Error message
+     */
     @RequestMapping(value = "/shipment/{barcode}",
             method = RequestMethod.GET,
             produces = "application/json")
@@ -31,6 +36,11 @@ public class ShipmentController {
         return shipmentService.getShipment(barcode);
     }
 
+    /**
+     *  Shall be used to insert barcodes in system
+     * @param barcode String with length between 13 and 25 characters
+     * @return JSON representation of entity or Error message
+     */
     @RequestMapping(value = "/shipment/{barcode}",
             method = RequestMethod.POST,
             produces = "application/json")
