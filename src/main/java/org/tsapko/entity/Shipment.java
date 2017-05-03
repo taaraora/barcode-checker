@@ -20,7 +20,7 @@ public class Shipment implements Serializable{
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) //todo change to sequence
+    @GeneratedValue
     private Long id;
 
     @NotNull
