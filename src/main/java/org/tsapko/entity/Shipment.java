@@ -1,25 +1,38 @@
-package org.tsapko.persistance.entity;
+package org.tsapko.entity;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 public class Shipment implements Serializable{
 
+    public Shipment() {
+    }
+
+    public Shipment(String barcode) {
+        this.barcode = barcode;
+    }
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) //todo change to sequence
-    private long id;
+    private Long id;
 
+    @NotNull
+    @Size(min = 13, max = 25)
     @Column(name="barcode")
     private String barcode;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -44,5 +57,10 @@ public class Shipment implements Serializable{
     @Override
     public int hashCode() {
         return Objects.hash(getBarcode());
+    }
+
+    @Override
+    public String toString() {
+        return "Shipment{barcode='" + barcode + "\'}";
     }
 }

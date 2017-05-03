@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: tsapko
+      changes:
+        - createTable:
+            tableName: shipment
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: barcode
+                  type: varchar(25)
+                  constraints:
+                    nullable: false
+                    unique: true
