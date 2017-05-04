@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.tsapko.dao.ShipmentRepository;
 import org.tsapko.entity.Shipment;
-import org.tsapko.exception.handler.ShipmentNotFoundException;
+import org.tsapko.exception.ShipmentNotFoundException;
 import org.tsapko.service.ShipmentService;
 
 import static org.assertj.core.api.Assertions.assertThat;

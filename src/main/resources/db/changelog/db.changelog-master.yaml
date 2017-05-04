@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: 1
-      author: tsapko
+      author: taaraora
       changes:
         - createTable:
             tableName: shipment
@@ -19,3 +19,13 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     unique: true
+  - changeSet:
+      id: 2
+      author: taaraora
+      changes:
+      - sqlFile:
+          dbms: h2
+          encoding: utf8
+          path: ../../data.sql
+          relativeToChangelogFile: true
+          splitStatements: true

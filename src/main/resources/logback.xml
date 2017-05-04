@@ -19,6 +19,10 @@
         <appender-ref ref="STDOUT" />
     </logger>
 
+    <logger name="liquibase" level="trace" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
     <root level="warn">
         <appender-ref ref="STDOUT" />
     </root>

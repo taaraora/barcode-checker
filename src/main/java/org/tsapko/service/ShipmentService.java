@@ -1,6 +1,5 @@
 package org.tsapko.service;
 
-import orestes.bloomfilter.BloomFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.tsapko.controller.ShipmentController;
 import org.tsapko.dao.ShipmentRepository;
 import org.tsapko.entity.Shipment;
-import org.tsapko.exception.handler.ShipmentNotFoundException;
+import org.tsapko.exception.ShipmentNotFoundException;
 
 @Service
 public class ShipmentService {
@@ -21,7 +20,7 @@ public class ShipmentService {
     private ShipmentRepository shipmentRepository;
 
     @Autowired
-    private BloomFilter<String> filter;
+    private SearchFilter filter;
 
     @Transactional(readOnly = true)
     public Shipment getShipment(String barcode) throws ShipmentNotFoundException {

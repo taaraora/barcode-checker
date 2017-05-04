@@ -1,4 +1,4 @@
-package org.tsapko.exception.handler;
+package org.tsapko.exception;
 
 public class ShipmentNotFoundException extends RuntimeException{
 
